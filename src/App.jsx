@@ -1,4 +1,4 @@
-import { useState } from "react"; // ATIVIDADE 06.04: Importando hooks
+import { useState, useEffect} from "react"; // ATIVIDADE 06.04: Importando hooks
 import Card from "./components/Card";
 import Formulario from "./components/Formulario";
 
@@ -42,6 +42,11 @@ function App() {
     return novaLista;
   });
 
+useEffect( () =>{
+  localStorage.setItem("herois", JSON.stringify(lista));
+  }, [lista]);
+
+  
   const filterMaga = () => {
     const maga = novaLista.filter((heroi) => {
       return heroi.classe === "Maga";
@@ -99,6 +104,7 @@ function App() {
         }
       }
 
+  
       return heroi;
     });
 
@@ -133,12 +139,14 @@ function App() {
 
 
         <div>
-          <h2 className="flex flex-col my-8">Maga</h2>
+          {lista.some(h => h.classe === "Maga" && h.aparecer) && (
+              <h2 className="flex flex-col my-8">Maga</h2>
+          )}
 
           <div style={containerStyle}>
             {lista
               .filter((heroi) => {
-                return heroi.classe === "Maga";
+                return heroi.classe === "Maga"
               })
               .filter((heroi) => {
                 return heroi.aparecer === true;
@@ -157,7 +165,9 @@ function App() {
         </div>
 
         <div className="">
-          <h2>Guerreiro</h2>
+          {lista.some(h => h.classe === "Guerreiro" && h.aparecer) && (
+              <h2 className="flex flex-col my-8">Guerreiro</h2>
+          )}
 
           <div style={containerStyle}>
             {lista
@@ -181,7 +191,9 @@ function App() {
         </div>
 
         <div>
-          <h2>Arqueira</h2>
+          {lista.some(h => h.classe === "Arqueira" && h.aparecer) && (
+              <h2 className="flex flex-col my-8">Arqueira</h2>
+          )}
 
           <div style={containerStyle}>
             {lista
