@@ -1,4 +1,4 @@
-function StatusBadge({tipo}){ // Reecebe o status de cada heroi
+function StatusBadge({tipo}){ // Reecebe o status de cada heroi (Atividade 02/03- Props)
     const estilos = {
         online: "bg-green-500 shadow-green-200",
         offline: "bg-gray-500 shadow-gray-200",

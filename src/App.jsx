@@ -1,6 +1,6 @@
-import { useState, useEffect} from "react"; // ATIVIDADE 06.04: Importando hooks
-import Card from "./components/Card";
-import Formulario from "./components/Formulario";
+import { useState, useEffect} from "react"; // ATIVIDADE 30.03 (Importando useEffect)
+import Card from "./components/Card"; // Atividade Incial 11.02 (Criando o primeiro componente)
+import Formulario from "./components/Formulario"; // Atividade 24.03 (Importando o componente Formulário)
 
 // Import´s das ft´s de cada herois
 import arqueira from "./assets/avatar/arqueira.png";
@@ -8,7 +8,7 @@ import guerreiro from "./assets/avatar/guerreiro.png";
 import mage from "./assets/avatar/mage.png";
 
 function App() {
-  //Atividade 06.04:
+  //Atividade 06.03 (Estrurando os dados dos herois e Props):
   const listaHerois = [
     { id: 1, nome: "Arthemis", classe: "Arqueira", imagem: arqueira, status: "online" },
     { id: 2, nome: "Grog", classe: "Guerreiro", imagem: guerreiro, status: "ausente" },
@@ -46,7 +46,7 @@ useEffect( () =>{
   localStorage.setItem("herois", JSON.stringify(lista));
   }, [lista]);
 
-  
+  // Atividade 10.03 (Imutabilidade e filtros )
   const filterMaga = () => {
     const maga = novaLista.filter((heroi) => {
       return heroi.classe === "Maga";
@@ -77,16 +77,24 @@ useEffect( () =>{
         return { ...heroi, aparecer: false };
       }
 
+      // Atividade de hooks (16.03) - Botão "Excluir" que remove do array (filter)
+  const excluirHeroi = (id) => {
+    const listaNova = lista.filter((heroi) => heroi.id !== id);
+    setLista(listaNova);
+  };
+
+
       return heroi;
     });
 
     setLista(limpo);
   };
 
+  // Atividade 16.03 (Level Up)
   const xps = (id) => {
     const contar = lista.map((heroi) => {
       if (heroi.id === id) {
-        const xpNovo = heroi.xp + 50;
+        const xpNovo = heroi.xp + 10;
 
         if (xpNovo >= 100) {
           const nivel = (heroi.nivel += 1);
@@ -112,25 +120,30 @@ useEffect( () =>{
   };
 
  return (
+  //Botões de filtro para recrutar
   <>
-     <div className="bg-blue-900 shadow-lg flex justify-center items-center w-full h-32">
+<div className="bg-blue-900 shadow-lg flex flex-col justify-center items-center w-full h-auto py-6 gap-4">
 
-      <h1 className="font-bold text-white text-center"> Seleção de Heróis (Recrute seu time)
-      </h1>
-        <br />
-      <button
-        className="px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl "  onClick={filterMaga} > Recrutar Maga
-      </button>
+        <h1 className="font-bold text-white text-center text-2xl"> 
+          Seleção de Heróis (Filtre seu time)
+        </h1>
 
-      <button
-        className="px-6 py-3 bg-red-800  text-white font-semibold rounded-xl"  onClick={filterGuerreiro}>  Recrutar Guerreiro
-      </button>
+        <div className="flex gap-4">
+          <button
+            className="px-6 py-3 bg-purple-700 text-white font-semibold rounded-xl" onClick={filterMaga}> 
+            Recrutar Maga
+          </button>
 
-      <button
-        className="px-6 py-3 bg-green-700 text-white font-semibold rounded-xl"  onClick={filterArqueira}>  Recrutar Arqueira
-      </button>
+          <button
+            className="px-6 py-3 bg-red-800 text-white font-semibold rounded-xl" onClick={filterGuerreiro}>  
+            Recrutar Guerreiro
+          </button>
 
-   
+          <button
+            className="px-6 py-3 bg-green-700 text-white font-semibold rounded-xl" onClick={filterArqueira}>  
+            Recrutar Arqueira
+          </button>
+        </div>
       </div>
 
       <div></div>

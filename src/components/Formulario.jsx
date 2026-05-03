@@ -1,9 +1,10 @@
+// Atividade 24.03 (Adicionando os import´s necessários e criando o componente Formulário )
 import { useState } from "react";
 import { z } from 'zod';
 
 const schema = z.object({
-  nome: z.string().min(3, "Nome muito curto"),
-  classe: z.string().min(4, "classe muito curto"),
+  nome: z.string().min(3, " O nome está curto"),
+  classe: z.string().min(4, "A classe está curta"),
 })
 
 function Formulario(){
@@ -30,6 +31,7 @@ function Formulario(){
     } else {
       setErros({})
       alert("Formulário enviado com sucesso!")
+        setDados({nome:'', classe:''});
     }
   }
     return(<>
