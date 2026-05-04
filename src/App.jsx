@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react"; // ATIVIDADE 30.03 (Importando useEffect)
 import Card from "./components/Card"; // Atividade Incial 11.02 (Criando o primeiro componente)
 import Formulario from "./components/Formulario"; // Atividade 24.03 (Importando o componente Formulário)
-import fundo from "./assets/avatar/fundo.jpg"; // Estilização Própria (Coloquei um fundo mais coerente com o projeto)
+import fundo from "./assets/fundo.jpg"; // Estilização Própria (Coloquei um fundo mais coerente com o projeto)
 
 // Import´s das ft´s de cada herois
 import arqueira from "./assets/avatar/arqueira.png";

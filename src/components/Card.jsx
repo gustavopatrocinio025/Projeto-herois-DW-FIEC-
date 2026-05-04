@@ -1,4 +1,4 @@
-import StatusBadge from "./StatusBadge";
+import StatusBadge from "./StatusBadge"; // Import do status de cada heroi 
 
 
 function Card({ heroi, exibir, xps}) {

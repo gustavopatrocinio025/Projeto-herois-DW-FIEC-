@@ -27,7 +27,7 @@ function Cadastro() {
 
       if (response.ok) {
         setMensagem("Usuário cadastrado com sucesso!");
-        // limpar os campos
+       
         setNome("");
         setEmail("");
         setSenha("");
