@@ -18,7 +18,7 @@ const subirDeNivel = heroi.xp === 0 && heroi.nivel > 0;
     width: "200px",
   };
   return (
-    <div style={cardStyle} className={` ${subirDeNivel ? 'bg-yellow-600 border-4 border-yellow-800' : 'border-2 border-black-300 '}`}>
+    <div style={cardStyle} className={` ${subirDeNivel ? 'bg-yellow-600 border-4 border-orange-600' : 'bg-white/70 '}`}>
       <StatusBadge tipo={heroi.status} />
       <img
         src={heroi.imagem}
@@ -26,11 +26,11 @@ const subirDeNivel = heroi.xp === 0 && heroi.nivel > 0;
         style={{ width: "100%", borderRadius: "8px" }}
       />
       <h2>{heroi.nome}</h2>
-      {subirDeNivel && <p className="text-yellow-200">Subiu de Nivel </p>}
+      {subirDeNivel && <p className="text-black">Subiu de Nivel </p>}
 
-      <p>Nivel: <span className="text-orange-800">{heroi.nivel}</span></p>
-<p>XP: <span className="text-green-700">{heroi.xp}</span></p>
-<p>classe: {heroi.classe}</p>
+      <p>Nivel: <span className="text-green">{heroi.nivel}</span></p>
+<p>XP: <span>{heroi.xp}</span></p>
+<p>Classe: {heroi.classe}</p>
 
 <button 
   className="w-full mt-3 py-2 text-white rounded-md bg-blue-600" onClick={chamado}> Recrutar
@@ -41,7 +41,7 @@ const subirDeNivel = heroi.xp === 0 && heroi.nivel > 0;
 </button>
 
 <button 
-  className="w-full mt-3 py-2 text-white rounded-md bg-green-700" onClick={xps}> XP
+  className="w-full mt-3 py-2 text-white rounded-md bg-lime-600" onClick={xps}> XP
 </button>
 </div>
     );
