@@ -1,0 +1,10 @@
+{
+  "herois": 
+  [
+    { "id": 1, "nome": "Arthemis", "classe": "Arqueira", "status": "online", "xp": 0, "nivel": 0 },
+
+    { "id": 2, "nome": "Grog", "classe": "Guerreiro", "status": "ausente", "xp": 0, "nivel": 0},
+
+    { "id": 3, "nome": "Elora", "classe": "Maga", "status": "offline", "xp": 0, "nivel": 0 }
+  ]
+}
