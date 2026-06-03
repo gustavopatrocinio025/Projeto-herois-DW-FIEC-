@@ -8,7 +8,6 @@ function Card({ heroi, exibir, xps}) {
 
 const subirDeNivel = heroi.xp === 0 && heroi.nivel > 0;
 
-
   const cardStyle = {
     borderRadius: "12px",
     padding: "16px",
@@ -18,7 +17,7 @@ const subirDeNivel = heroi.xp === 0 && heroi.nivel > 0;
     width: "200px",
   };
   return (
-    <div style={cardStyle} className={` ${subirDeNivel ? 'bg-yellow-600 border-4 border-orange-600' : 'bg-white/70 '}`}>
+    <div style={cardStyle} className={` ${subirDeNivel ? 'bg-yellow-600 border-4 border-red-700' : 'bg-white/70 '}`}>
       <StatusBadge tipo={heroi.status} />
       <img
         src={heroi.imagem}

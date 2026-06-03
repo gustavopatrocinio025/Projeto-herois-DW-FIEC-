@@ -30,11 +30,11 @@ function Formulario(){
           queryKey: ["herois"],
         });
 
-        alert("Herói criado com sucesso!");
+        alert("Parabéns!!! Seu heroi foi criado com exito...");
       },
 
       onError: () => {
-        alert("Erro ao salvar herói!");
+        alert("Não foi possível salvar o herói, tente novamente");
       }
     });
 
@@ -43,8 +43,7 @@ function Formulario(){
       ...dados,[e.target.name]: e.target.value
     })
   }
-
-    
+ 
     function handleSubmit(e) {
     e.preventDefault();
 

@@ -24,7 +24,7 @@ function Login() {
         setMensagem(data.mensagem);
       }
     } catch (error) {
-      setMensagem("Erro ao conectar com o Servidor!")
+      setMensagem("Erro ao conectar com o Servidor")
     }
   } 
 

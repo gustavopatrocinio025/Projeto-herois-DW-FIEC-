@@ -2,6 +2,9 @@ import { useState, useEffect } from "react"; // ATIVIDADE 30.03 (Importando useE
 import Card from "./components/Card"; // Atividade Incial 11.02 (Criando o primeiro componente)
 import Formulario from "./components/Formulario"; // Atividade 24.03 (Importando o componente Formulário)
 import fundo from "./public/fundo.jpg"; // Estilização Própria (Coloquei um fundo mais coerente com o projeto)
+import Header from "./components/cabecalho";
+import Footer from "./components/rodape";
+import { useTema } from "./ThemeContext";
 
 // Import´s das ft´s de cada herois
 import arqueira from "./assets/avatar/arqueira.png";
@@ -132,11 +135,10 @@ function App() {
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="items-center w-full h-auto py-6 gap-4 mb-6">
-        <h1 className="font-bold text-white text-center text-2xl">
-          Projeto Herois (RPG)
-        </h1>
-      </div>
+      {/* Atividade 25.05 (Arquitertura de Estado Global) - Parte do cabeçalho */}
+       <Header />
+
+    <div className="items-center w-full h-auto py-6 gap-4 mb-6"></div>
 
       {/* FORMULÁRIO */}
       <div className="mb-6">
@@ -256,6 +258,7 @@ function App() {
           </button>
         </div>
       </div>
+        <Footer />
     </div>
   );
 }
